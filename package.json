@@ -1,0 +1,27 @@
+{
+  "name": "email-template",
+  "version": "1.0.0",
+  "description": "Build emails quickly and easily",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/redlioncanada/email-template.git"
+  },
+  "author": "Red Lion Canada",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/redlioncanada/email-template/issues"
+  },
+  "homepage": "https://github.com/redlioncanada/email-template#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-include": "^2.3.1",
+    "gulp-inline-css": "^3.1.0",
+    "gulp-sass": "^2.3.2"
+  }
+}

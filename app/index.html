@@ -1,22 +1,60 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta name="ad.agency" content="Red Lion Canada">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style>
-		/*=include ./css/index.css */
+		/*=include ../build/temp/index.css*/
 	</style>
 </head>
 <body>
 	<!--YAHOO CENTER FIX (full page wrapper) -->
-	<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td width="100%" align="center">
+	<table id="wrapper" width="100%"><tr><td width="100%" align="center">
 
 	<!-- This is your container, you can shrink this if you want, but it's not recommended to go over 600px. 600px is generally the standard width for desktop/web. -->
-	<table width="600" border="0" align="center" cellpadding="0" cellspacing="0">
-	 <tr><td width="600" align="center">
+	<table id="container" align="center">
+	 <tr><td id="container-td" align="center">
 
-	<!-- Add your layout tables here. Make sure they all have the attribute align="center" -->
+				<table width="100%">
+					<tr><td class="logo">
+						<img src="LOGO.jpg" />
+					</td></tr>
+
+					<tr><td class="headline">
+						<h1>{headline-a}<br/>{headline-b}</h1>
+					</td></tr>
+
+					<tr><td class="body1">
+						<p>{body1}</p>
+					</td></tr>
+
+					<tr><td class="featured-image">
+						<img src="IMG.jpg" />
+					</td></tr>
+
+					<tr><td class="body2">
+						<p>{body2}</p>
+					</td></tr>
+
+					<tr><td class="body3">
+						<p><b>{body3-a} {body3-link} {body3-b}</b></p>
+					</td></tr>
+
+					<tr><td class="cta">
+						<a href="{link.follow}">
+							<b>{cta} ></b>
+						</a>
+					</td></tr>
+
+					<tr><td class="legal">
+						<p>{legal1}</p>
+						<p>{legal2}</p>
+						<p>{legal3}</p>
+						<p>{legal4-a} <a href="{link.email}">{legal4-link}</a>{legal4-b}</p>
+						<p>{legal5}<a href="{link.email}">{legal5-link}</a></p>
+					</td></tr>
+				</table>
 
 	</td></tr></table>
 	</td></tr></table>

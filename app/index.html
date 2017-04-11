@@ -7,6 +7,11 @@
 	<style>
 		/*=include ../build/temp/index.css */
 	</style>
+	<!--[if mso]>
+	<style type="text/css">
+	body, table, td, img, a {font-family: 'Helvetica Neue', Helvetica, arial, sans-serif !important;}
+	</style>
+	<![endif]-->
 </head>
 <body>
 	<!--YAHOO CENTER FIX (full page wrapper) -->
@@ -17,26 +22,28 @@
 	<!-- email contents -->
 	<table class="contents" width="100%">
 		<tr class="header"><td>
-			<td width="50%" valign="top"><img class="headline" src="headline.png" alt="{headline}"/></td>
-			<td width="50%" valign="bottom" align="right"><img class="babsocks" src="babsocks.png" alt="{bonusbabs}"/></td>
+			<td width="50%" class="headline" valign="top"><img src="headline.png" alt="{headline}"/></td>
+			<td width="50%" class="babsocks" valign="bottom" align="right"><img src="babsocks.png" alt="{bonusbabs}"/></td>
 		</td></tr>
 		<tr class="body"><td>
-			<p class="copy">{copy1}</p><br/>
-			<p class="copy">{copy2}</p><br/>
-			<p class="copy">{copy3}</p>
+			<table><tr><td class="copy" text-align="left">{copy1}</td></tr></table>
+			<table><tr><td class="copy" text-align="left">{copy2}</td></tr></table>
+			<table><tr><td class="copy no-padding" text-align="left">{copy3}</td></tr></table>
 
 			<!-- button -->
-			<table class="button">
-			  <tr>
-			    <td align="center">
-			      <table>
-			        <tr>
-			          <td><a href="{cta-link}" target="_blank"><img src="cta.png" alt="{cta}"/></a></td>
-			        </tr>
-			      </table>
-			    </td>
-			  </tr>
-			</table>
+			<table class="button-padding" width="100%"><tr><td align="center">
+				<table class="button">
+				  <tr>
+				    <td align="center">
+				      <table>
+				        <tr>
+				          <td><a href="{cta-link}" target="_blank"><img src="cta.png" alt="{cta}"/></a></td>
+				        </tr>
+				      </table>
+				    </td>
+				  </tr>
+				</table>
+			</td></tr></table>
 			<!-- button end -->
 		</td></tr>
 	</table>

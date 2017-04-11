@@ -5,19 +5,42 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta name="ad.agency" content="Red Lion Canada">
 	<style>
-		/*=include ./css/index.css */
+		/*=include ../build/temp/index.css */
 	</style>
 </head>
 <body>
 	<!--YAHOO CENTER FIX (full page wrapper) -->
-	<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td width="100%" align="center">
+	<table width="100%"><tr><td width="100%" align="center">
+	<table class="container-width">
+	<tr><td class="container-width">
 
-	<!-- This is your container, you can shrink this if you want, but it's not recommended to go over 600px. 600px is generally the standard width for desktop/web. -->
-	<table width="600" border="0" align="center" cellpadding="0" cellspacing="0">
-	 <tr><td width="600" align="center">
+	<!-- email contents -->
+	<table class="contents" width="100%">
+		<tr class="header"><td>
+			<td width="50%" valign="top"><img class="headline" src="headline.png" alt="{headline}"/></td>
+			<td width="50%" valign="bottom" align="right"><img class="babsocks" src="babsocks.png" alt="{bonusbabs}"/></td>
+		</td></tr>
+		<tr class="body"><td>
+			<p class="copy">{copy1}</p><br/>
+			<p class="copy">{copy2}</p><br/>
+			<p class="copy">{copy3}</p>
 
-	<!-- Add your layout tables here. Make sure they all have the attribute align="center" -->
-	{test}
+			<!-- button -->
+			<table class="button">
+			  <tr>
+			    <td align="center">
+			      <table>
+			        <tr>
+			          <td><a href="{cta-link}" target="_blank"><img src="cta.png" alt="{cta}"/></a></td>
+			        </tr>
+			      </table>
+			    </td>
+			  </tr>
+			</table>
+			<!-- button end -->
+		</td></tr>
+	</table>
+	<!-- email contents end -->
 
 	</td></tr></table>
 	</td></tr></table>

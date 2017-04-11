@@ -1,10 +1,17 @@
 {
+	"name": "042017-babsocks-playoffs",
 	"text": {
 		"en": {
-			"test": "test"
+			"headline": "INTRODUCING THE CLINCHER COLLECTION.\n\nBABSOCKS. 110% COTTON.",
+			"bonusbabs": "BONUS BABS",
+			"copy1": "Hey there Babsocks fans,",
+			"copy2": "You've had the team's back all season, and now it's our turn to have yours.",
+			"copy3": "The boys are gonna need all the support they can get against Washington, so rep the Buds in every barn with our Home and Away pack, and we'll throw in a free pair of limited edition \"Playoffs\" Babsocks!",
+			"cta": "GET PLAYOFF READY",
+			"cta-link": "https://babsocks.ca/collections/all-2/products/wsock-2?utm_source=newsletter&utm_medium=email&utm_campaign=playoffs2017&utm_content=playoffssockpack"
 		},
 		"fr": {
-			"test": "le test"
+
 		}
 	}
 }

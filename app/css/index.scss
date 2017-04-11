@@ -1,10 +1,86 @@
+@import './variables';
 @import './mixins';
 @import './reset';
 
 html, body {
-	background: black;
+	font-family: 'Helvetica Neue', helvetica, arial, sans-serif;
+	color: #fff;
 }
 
-div {
-	color: #444;
+.header {
+	background-color: $primaryColor;
+
+	> td {
+		height: 365px;
+	}
+
+	td {
+		background-color: $primaryColor;
+	}
+
+	.headline {
+		text-align: center;
+		width: 210px;
+		margin: 55px 0 0 35px;
+	}
+
+	.babsocks {
+		margin-right: 20px;
+	}
+}
+
+.body {
+	> td {
+		padding: 30px 25px 0px 25px;
+	}
+}
+
+.copy {
+	color: $primaryColor;
+	line-height: 16pt;
+}
+
+.button {
+	margin-top: 35px;
+	width: 100%;
+
+	table td {
+		background-color: $primaryColor;
+		padding: 12px 18px 12px 18px;
+		-webkit-border-radius: 3px;
+		border-radius: 3px;
+		align: center;
+
+		a {
+			color: $titleColor;
+			display: inline-block;
+		}
+
+		img {
+			text-align: center;
+			font-size: 2em;
+		}
+	}
+}
+
+@media(max-width: $maxWidth + "px") {
+	.babsocks {
+		width: 93%;
+	}
+
+	.headline {
+		width: 70% !important;
+	}
+}
+
+@media(max-width: 515px) {
+	.header > td {height: 300px;}
+}
+
+@media(max-width: 435px) {
+	.header > td {height: 250px;}
+}
+
+@media(max-width: 355px) {
+	.header > td {height: 200px;}
 }

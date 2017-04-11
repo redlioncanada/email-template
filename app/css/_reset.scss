@@ -15,6 +15,10 @@ a img {
     border:0 none;
 }
 
+a {
+    text-decoration: none;
+}
+
 .imageFix {
     display:block;
 }
@@ -23,10 +27,25 @@ table, td {
     border-collapse:collapse;
 }
 
+table {
+    align: center;
+    border: 0;
+    cellpadding: 0;
+    cellspacing: 0;
+}
+
 h1, h2, h3, h4, h5, h6, p, div {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	text-rendering: optimizeLegibility;
 	padding: 0;
 	margin: 0;
+}
+
+.container-width {
+    width: $maxWidth;
+}
+
+@media(max-width: $maxWidth + "px") {
+    .container-width {width: 100%;}
 }

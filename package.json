@@ -11,7 +11,7 @@
     "url": "git+https://github.com/redlioncanada/email-template.git"
   },
   "author": "Red Lion Canada",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/redlioncanada/email-template/issues"
   },
@@ -22,10 +22,13 @@
     "gulp-cssnano": "^2.1.2",
     "gulp-flatten": "^0.3.1",
     "gulp-htmlmin": "^3.0.0",
+    "gulp-ignore": "^2.0.2",
     "gulp-include": "^2.3.1",
     "gulp-inline-css": "^3.1.0",
+    "gulp-rename": "^1.2.2",
     "gulp-replace": "^0.5.4",
     "gulp-sass": "^2.3.2",
+    "gulp-zip": "^4.0.0",
     "merge-stream": "^1.0.1"
   }
 }

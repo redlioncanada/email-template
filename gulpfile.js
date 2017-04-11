@@ -9,12 +9,15 @@ var gulp = require('gulp'),
 	flatten = require('gulp-flatten'),
 	replace = require('gulp-replace'),
 	config = require('./app/config.json'),
-	del = require('del')
+	zip = require('gulp-zip'),
+	ignore = require('gulp-ignore'),
+	del = require('del'),
+	rename = require('gulp-rename')
 
 /* main tasks start */
-gulp.task('once', ['html'], function() {})
+gulp.task('once', ['html'], () => {})
 
-gulp.task('default', ['once'], function() {
+gulp.task('default', ['once'], () => {
 	gulp.watch('./app/css/**/*.scss', ['html'])
 	gulp.watch('./app/index.html', ['html'])
 	gulp.watch('./app/assets/**/*', ['html'])
@@ -22,11 +25,11 @@ gulp.task('default', ['once'], function() {
 /* main tasks end */
 
 /* sub tasks start */
-gulp.task('clean', function() {
+gulp.task('clean', () => {
     return del(['build']);
 });
 
-gulp.task('assets', ['clean'], function() {
+gulp.task('assets', ['clean'], () => {
 	var tasks = []
 
 	for (var language in config.text) {
@@ -40,14 +43,14 @@ gulp.task('assets', ['clean'], function() {
 	return merge(tasks)
 })
 
-gulp.task('css', ['assets'], function() {
+gulp.task('css', ['assets'], () => {
 	return gulp.src('./app/css/index.scss')
 		.pipe(sass()).on('error', handleError)
 		.pipe(minifyCss())
 		.pipe(gulp.dest('./build/temp'))
 })
 
-gulp.task('html', ['css'], function() {
+gulp.task('html', ['css'], () => {
 	delete require.cache[require.resolve('./app/config.json')] //refresh config.json
 	var tasks = []
 
@@ -55,7 +58,9 @@ gulp.task('html', ['css'], function() {
 		var html = gulp.src('./app/index.html')
 			.pipe(include())
 			.pipe(inliner({
-				preserveMediaQueries: true
+				preserveMediaQueries: true,
+				applyTableAttributes: true,
+				removeHtmlSelectors: true
 			}))
 
 		for (var key in config.text[language]) {
@@ -70,6 +75,39 @@ gulp.task('html', ['css'], function() {
 			.pipe(gulp.dest(`./build/${language}`))
 
 		tasks.push(html)
+
+		var htmlUminified = gulp.src('./app/index.html')
+			.pipe(include())
+			.pipe(inliner({
+				preserveMediaQueries: true,
+				applyTableAttributes: true
+			}))
+
+		for (var key in config.text[language]) {
+			var value = config.text[language][key]
+			htmlUminified.pipe(replace(`{${key}}`, value))
+		}
+
+		htmlUminified
+			.pipe(rename({basename:"index.dev"}))
+			.pipe(gulp.dest(`./build/${language}`))
+
+		tasks.push(htmlUminified)
+	}
+
+	return merge(tasks)
+})
+
+gulp.task('package', () => {
+	let tasks = []
+
+	for (var language in config.text) {
+		let a = gulp.src(`./build/${language}/**/*`)
+			.pipe(ignore.exclude(/.dev/g))
+			.pipe(zip(`${config.name}-${language}.zip`))
+			.pipe(gulp.dest('./package'))
+
+		tasks.push(a)
 	}
 
 	return merge(tasks)
